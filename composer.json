@@ -1,0 +1,16 @@
+{
+    "name": "imageboard/app",
+    "description": "A modern PHP image board application",
+    "type": "project",
+    "require": {
+        "php": "^8.1",
+        "cloudinary/cloudinary_php": "^2.0",
+        "vlucas/phpdotenv": "^5.5",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+} 
