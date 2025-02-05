@@ -1,0 +1,48 @@
+.container {
+  min-height: 100vh;
+  padding: 2rem;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  margin: 2rem 0;
+}
+
+.logoImage {
+  max-width: 400px;
+}
+
+.navigation {
+  margin: 2rem 0;
+}
+
+.navigation a {
+  margin: 0 1rem;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.search {
+  margin: 2rem 0;
+}
+
+.searchInput {
+  padding: 0.5rem;
+  width: 300px;
+  margin-right: 1rem;
+}
+
+.searchButton {
+  padding: 0.5rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+} 
