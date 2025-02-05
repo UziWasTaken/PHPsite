@@ -1,4 +1,4 @@
-import { prisma } from '../../lib/prismadb';
+import prisma from '../../lib/db';
 import { v2 as cloudinary } from 'cloudinary';
 
 cloudinary.config({

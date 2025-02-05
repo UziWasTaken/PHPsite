@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { prisma } from '../../lib/prismadb';
+import prisma from '../../lib/db';
 import styles from '../../styles/Posts.module.css';
 import Link from 'next/link';
 
