@@ -1,3 +1,8 @@
 <?php
 header('Content-Type: application/json');
-echo json_encode(['message' => 'Hello from PHP!']); 
+http_response_code(200);
+echo json_encode([
+    'status' => 'success',
+    'message' => 'API is working',
+    'php_version' => PHP_VERSION
+]); 

@@ -3,7 +3,7 @@
     "description": "A modern PHP image board application",
     "type": "project",
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "cloudinary/cloudinary_php": "^2.0",
         "vlucas/phpdotenv": "^5.5",
         "ext-pdo": "*"
@@ -12,5 +12,10 @@
         "psr-4": {
             "App\\": "src/"
         }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     }
 } 

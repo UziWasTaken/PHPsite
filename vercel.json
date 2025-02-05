@@ -6,15 +6,17 @@
         }
     },
     "routes": [
+        { "src": "/api/(.*)", "dest": "/api/$1" },
         { "src": "/(.*)", "dest": "/public/index.php" }
     ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "false"
+        "APP_DEBUG": "false",
+        "NOW_PHP_DEBUG": "1"
     },
     "build": {
         "env": {
-            "PHP_VERSION": "8.1"
+            "PHP_VERSION": "8.2"
         }
     }
 } 
