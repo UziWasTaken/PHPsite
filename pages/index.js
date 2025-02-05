@@ -28,6 +28,7 @@ export default function Home() {
           <Link href="/account">My Account</Link>
           <Link href="/forum">Forums</Link>
           <Link href="/radio">Radio</Link>
+          <Link href="/api-docs">API</Link>
         </div>
 
         <div className={styles.searchBox}>
