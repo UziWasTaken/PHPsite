@@ -4,7 +4,9 @@ import ErrorBoundary from '../components/ErrorBoundary'
 function MyApp({ Component, pageProps }) {
   return (
     <ErrorBoundary>
-      <Component {...pageProps} />
+      <div className="app-container">
+        <Component {...pageProps} />
+      </div>
     </ErrorBoundary>
   )
 }
