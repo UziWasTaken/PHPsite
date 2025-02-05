@@ -9,36 +9,49 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Image Board</title>
-        <meta name="description" content="A safe image board" />
+        <title>Safebooru - Anime and Manga Images</title>
+        <meta name="description" content="Anime and Manga image board" />
       </Head>
 
       <main className={styles.main}>
         <div className={styles.logo}>
-          <img src="/logo.png" alt="Logo" className={styles.logoImage} />
+          <img 
+            src="/angel.png" 
+            alt="Safebooru" 
+            className={styles.logoImage}
+          />
         </div>
 
-        <div className={styles.navigation}>
+        <div className={styles.menu}>
           <Link href="/posts">Browse</Link>
-          <Link href="/upload">Upload</Link>
-          <Link href="/tags">Tags</Link>
+          <Link href="/comments">Comments</Link>
+          <Link href="/account">My Account</Link>
+          <Link href="/forum">Forums</Link>
+          <Link href="/radio">Radio</Link>
         </div>
 
-        <div className={styles.search}>
+        <div className={styles.searchBox}>
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search posts..."
+            placeholder="Search..."
             className={styles.searchInput}
           />
-          <Link href={`/posts?tags=${searchQuery}`}>
-            <button className={styles.searchButton}>Search</button>
-          </Link>
+          <button className={styles.searchButton}>Search</button>
+        </div>
+
+        <div className={styles.mascots}>
+          <img 
+            src="/mascots.png" 
+            alt="Mascots" 
+            className={styles.mascotsImage}
+          />
         </div>
 
         <div className={styles.stats}>
           <p>Serving 4,569,420 posts - Running Gelbooru 0.2.5</p>
+          <p>Have you tried our search plugin available for Firefox?</p>
         </div>
       </main>
     </div>

@@ -1,48 +1,81 @@
 .container {
   min-height: 100vh;
-  padding: 2rem;
-  background: #1a1a1a;
-  color: #fff;
+  background: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
   text-align: center;
 }
 
 .logo {
-  margin: 2rem 0;
+  margin: 20px 0;
 }
 
 .logoImage {
-  max-width: 400px;
+  max-width: 800px;
+  height: auto;
 }
 
-.navigation {
-  margin: 2rem 0;
+.menu {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.navigation a {
-  margin: 0 1rem;
-  color: #3498db;
+.menu a {
+  color: #006FFA;
   text-decoration: none;
+  font-weight: bold;
 }
 
-.search {
-  margin: 2rem 0;
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.searchBox {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .searchInput {
-  padding: 0.5rem;
+  padding: 5px 10px;
   width: 300px;
-  margin-right: 1rem;
+  border: 1px solid #ccc;
 }
 
 .searchButton {
-  padding: 0.5rem 1rem;
-  background: #3498db;
+  padding: 5px 15px;
+  background: #006FFA;
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.mascots {
+  margin: 20px 0;
+}
+
+.mascotsImage {
+  max-width: 500px;
+  height: auto;
+}
+
+.stats {
+  margin: 20px 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.stats p {
+  margin: 5px 0;
 } 
