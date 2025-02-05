@@ -2,11 +2,5 @@
     "version": 2,
     "framework": "nextjs",
     "buildCommand": "npm run build",
-    "installCommand": "npm install",
-    "builds": [
-        {
-            "src": "package.json",
-            "use": "@vercel/next"
-        }
-    ]
+    "installCommand": "npm install"
 } 
