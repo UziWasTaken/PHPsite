@@ -1,4 +1,4 @@
-import { prisma } from '../../lib/prismadb';
+import prisma from '../../lib/prisma';
 import { v2 as cloudinary } from 'cloudinary';
 
 cloudinary.config({
@@ -13,40 +13,22 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { image, tags } = req.body;
+    const { image, tags = [] } = req.body;
 
-    // Upload image to Cloudinary
     const uploadResponse = await cloudinary.uploader.upload(image, {
       folder: 'imageboard',
     });
 
-    // Create thumbnail
-    const thumbnail = cloudinary.url(uploadResponse.public_id, {
-      width: 200,
-      height: 200,
-      crop: 'fill',
-    });
-
-    // Create post with tags
     const post = await prisma.post.create({
       data: {
         imageUrl: uploadResponse.secure_url,
-        thumbnail,
-        tags: {
-          connectOrCreate: tags.map(tag => ({
-            where: { name: tag },
-            create: { name: tag }
-          }))
-        }
+        thumbnail: uploadResponse.secure_url,
       },
-      include: {
-        tags: true
-      }
     });
 
-    res.status(200).json(post);
+    return res.status(200).json(post);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error uploading image' });
+    console.error('Upload error:', error);
+    return res.status(500).json({ error: 'Upload failed' });
   }
 } 
