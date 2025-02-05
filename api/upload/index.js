@@ -1,4 +1,4 @@
-import prisma from '../../lib/db';
+const prisma = require('../../lib/db');
 import { v2 as cloudinary } from 'cloudinary';
 
 cloudinary.config({
