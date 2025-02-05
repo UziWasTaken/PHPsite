@@ -2,20 +2,14 @@
     "version": 2,
     "builds": [
         {
-            "src": "api/**/*.php",
-            "use": "vercel-php@0.6.0",
-            "config": {
-                "php.ini": ".vercel/php.ini"
-            }
+            "src": "api/**/*.js",
+            "use": "@vercel/node"
         }
     ],
     "routes": [
-        { "src": "/api/(.*)", "dest": "/api/$1.php" },
-        { "src": "/(.*)", "dest": "/public/index.php" }
+        { "src": "/api/(.*)", "dest": "/api/$1" }
     ],
     "env": {
-        "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "NOW_PHP_DEBUG": "1"
+        "APP_ENV": "production"
     }
 } 
