@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import prisma from '../../lib/prisma';
-import styles from '../../styles/Posts.module.css';
 import Link from 'next/link';
+import styles from '../../styles/Posts.module.css';
 
-export default function Posts({ initialPosts = [], totalPosts = 0 }) {
+export default function Posts({ initialPosts = [] }) {
   const [posts] = useState(initialPosts);
 
   if (!posts.length) {
@@ -28,6 +27,8 @@ export default function Posts({ initialPosts = [], totalPosts = 0 }) {
 }
 
 export async function getServerSideProps() {
+  const { default: prisma } = await import('../../lib/prisma');
+  
   try {
     const posts = await prisma.post.findMany({
       take: 20,
@@ -36,16 +37,14 @@ export async function getServerSideProps() {
 
     return {
       props: {
-        initialPosts: JSON.parse(JSON.stringify(posts)),
-        totalPosts: posts.length,
+        initialPosts: JSON.parse(JSON.stringify(posts))
       },
     };
   } catch (error) {
-    console.error('Error fetching posts:', error);
+    console.error('Error:', error);
     return {
       props: {
-        initialPosts: [],
-        totalPosts: 0,
+        initialPosts: []
       },
     };
   }

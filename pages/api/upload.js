@@ -1,4 +1,3 @@
-import prisma from '../../lib/prisma';
 import { v2 as cloudinary } from 'cloudinary';
 
 cloudinary.config({
@@ -13,7 +12,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { image, tags = [] } = req.body;
+    const { default: prisma } = await import('../../lib/prisma');
+    const { image } = req.body;
 
     const uploadResponse = await cloudinary.uploader.upload(image, {
       folder: 'imageboard',
